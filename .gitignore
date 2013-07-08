@@ -1,0 +1,14 @@
+*.iws
+*Db.properties
+*Db.script
+.settings
+stacktrace.log
+/*.log
+/*DB.*
+.DS_Store
+*.iml
+*.ipr
+.project
+.classpath
+.idea/
+
