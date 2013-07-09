@@ -11,4 +11,8 @@ stacktrace.log
 .project
 .classpath
 .idea/
-
+target/classes
+grails-app/controllers/com/virtualsw/Prueba1Controller.groovy
+grails-app/views/prueba1/*
+test/unit/com/virtualsw/Prueba1ControllerTests.groovy
+*~

@@ -9,23 +9,25 @@ class ImgIndirectGrailsPlugin {
     ]
 
     // TODO Fill in these fields
-    def title = "Img Indirect Plugin" // Headline display name of the plugin
-    def author = "Your name"
-    def authorEmail = ""
+    def title = "Image Indirect Plugin" // Headline display name of the plugin
+    def author = "jmiguel rodriguez"
+    def authorEmail = "jmiguel@virtualsw.com"
     def description = '''\
-Brief summary/description of the plugin.
+This plugin allows access to images outside the web server environment (tipically,
+folders not mapped for web applications)
 '''
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/plugin/img-indirect"
+    // def documentation = "http://grails.org/plugin/img-indirect"
+    def documentation = "not-yet"
 
     // Extra (optional) plugin metadata
 
     // License: one of 'APACHE', 'GPL2', 'GPL3'
-//    def license = "APACHE"
+    def license = "APACHE"
 
     // Details of company behind the plugin (if there is one)
-//    def organization = [ name: "My Company", url: "http://www.my-company.com/" ]
+    // def organization = [ name: "My Company", url: "http://www.my-company.com/" ]
 
     // Any additional developers beyond the author specified above.
 //    def developers = [ [ name: "Joe Bloggs", email: "joe@bloggs.net" ]]

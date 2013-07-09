@@ -22,3 +22,8 @@ log4j = {
 
     warn   'org.mortbay.log'
 }
+
+
+imageindirect.basePath='/home/jmiguel/gprjs/img-indirect-data/files1/'
+imageindirect.category.products='/home/jmiguel/gprjs/img-indirect-data/files2/'
+imageindirect.category.users='files11/'
