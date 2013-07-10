@@ -24,13 +24,13 @@ This grails plugin adds a new tag  &lt;ii:imageTag /&gt; which will allow your a
 <h4>Simplest use:</h4>
 
 <ul>
-	<li>1 - Add this variable on your Config.groovy
+	<li>Add this variable on your Config.groovy
 
 <p>imageindirect.basePath='/tmp/images'</p>
 
-	<li>2 - Deploy a photo (say, myPhoto.jpg) on that folder
-	<li>3 - Write anywhere on you GSP: &lt;ii:imageTag indirect-imagename="myPhoto.jpg"/&gt; 
-	<li>4 - You got it!
+	<li>Deploy a photo (say, myPhoto.jpg) on that folder
+	<li>Write anywhere on you GSP: &lt;ii:imageTag indirect-imagename="myPhoto.jpg"/&gt; 
+	<li>You got it!
 </ul>
 
 
@@ -39,27 +39,21 @@ This grails plugin adds a new tag  &lt;ii:imageTag /&gt; which will allow your a
 You can define categories of photos and make them accessible both on relative or absolute paths. Example:
 
 <ul>
-<li>1 - Add on your Config.groovy
+<li>Add to your Config.groovy
 
 <p>imageindirect.basePath='/tmp/images'</p>
 <p>imageindirect.category.landscapes='/tmp/landscapePhotos'</p>
 <p>imageindirect.category.macro='macroPhotos/'</p>
 
-<li>2 - 
-	<p>Put on /tmp/images any photo. Say: "myAvatar.gif"</p>
+<li><p>Put on /tmp/images any photo. Say: "myAvatar.gif"</p>
     <p>Put on /tmp/landscapePhotos , "majorca.png"</p> 
     <p>Put on /tmp/images/macroPhotos , for example, "antFace.jpg" </p>
 
-<li>3 - And on your GSP: 
-
+<li>Write on your GSP: 
 	<p>&lt;ii:imageTag indirect-imagename="myAvatar.gif"/&gt;</p>
 	<p>&lt;ii:imageTag indirect-category="landscapes" indirect-imagename="majorca.png"/&gt;</p>
 	<p>&lt;ii:imageTag indirect-category="macroPhotos" indirect-imagename="antFace.jpg"/&gt;</p>
 
-<li>4 - That's it!. 
+<li>That's it!. 
 </ul>
  
-
-
-
-
