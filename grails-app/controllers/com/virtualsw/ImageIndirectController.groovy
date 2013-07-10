@@ -3,34 +3,17 @@ package com.virtualsw
 class ImageIndirectController {
 
     static final int READ_BUFFER_SIZE = 1024
+    def imageIndirectService
 
-    def index(String imageName, String category, String contenttype) {
+    def index(String imageName, String category) {
+        File fileToSend = new File( imageIndirectService.fullPath( category ) , imageName )
 
-        String fullUrl = grailsApplication.config.imageindirect.basePath
-        String categoryUrl = category ? grailsApplication.config.imageindirect.category."${category}" : null
-        File fileToSend
-
-//        println("0- params: ${params}")
-//        println("1- fullUrl ${fullUrl} , categoryUrl ${categoryUrl}")
-
-        if ( categoryUrl ) {
-            if (categoryUrl.startsWith("/")) {
-                fullUrl = categoryUrl
-            } else {
-                fullUrl += "/${categoryUrl}"
-            }
-        }
-
-
-        fileToSend = new File( fullUrl , imageName )
-
-//        println("2- fullUrl ${fullUrl} , file: ${fileToSend.absolutePath}")
+        println("ImageIndirect - params: ${params} We'll try to get image [${fileToSend.absolutePath}]" )
 
         if( fileToSend.exists() ) {
-            InputStream is = new BufferedInputStream(new FileInputStream(new File( fullUrl , imageName )));
+            InputStream is = new BufferedInputStream(new FileInputStream( fileToSend ));
             String mimeType = URLConnection.guessContentTypeFromStream(is);
-            println("3- mime: ${mimeType}")
-            // response.setContentType("application/jpg")
+            println("ImageIndirect - mime type for [${fileToSend.name}]: ${mimeType}")
             response.setContentType(mimeType)
             OutputStream out = response.getOutputStream();
 

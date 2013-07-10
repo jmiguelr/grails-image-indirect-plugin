@@ -3,38 +3,37 @@ package com.virtualsw
 class ImageIndirectTagLib {
 
     static namespace = "ii"
+    def grailsLinkGenerator
 
     def imageTag = { attrs, body ->
+        def imagename = attrs.getProperty('indirect-imagename')
+        def category = attrs.getProperty('indirect-category')
 
-        def category = attrs.remove('indirect-category')
-        def imagename = attrs.remove('indirect-imagename')
-        def contenttype = attrs.remove('indirect-contenttype')
-
-        def name = attrs.remove('name')
+        def name = attrs.getProperty('name')
 
         /* Standard img tag attributes */
-        def id = attrs.remove('id')
-        def alt = attrs.remove('alt')
-        def title = attrs.remove('title')
-        def lang = attrs.remove('lang')
-        def style = attrs.remove('style')
-        def width = attrs.remove('width')
-        def height = attrs.remove('height')
-        def ismap = attrs.remove('ismap')
-        def longdesc = attrs.remove('longdesc')
-        def usemap = attrs.remove('usemap')
+        def id = attrs.getProperty('id')
+        def alt = attrs.getProperty('alt')
+        def title = attrs.getProperty('title')
+        def lang = attrs.getProperty('lang')
+        def style = attrs.getProperty('style')
+        def width = attrs.getProperty('width')
+        def height = attrs.getProperty('height')
+        def ismap = attrs.getProperty('ismap')
+        def longdesc = attrs.getProperty('longdesc')
+        def usemap = attrs.getProperty('usemap')
 
         /* Standard img tag event attributes */
-        def onclick = attrs.remove('onclick')
-        def ondblclick = attrs.remove('ondblclick')
-        def onmousedown = attrs.remove('onmousedown')
-        def onmoouseup = attrs.remove('onmoouseup')
-        def onmouseover = attrs.remove('onmouseover')
-        def onmousemove = attrs.remove('onmousemove')
-        def onmouseout = attrs.remove('onmouseout')
-        def onkeypress = attrs.remove('onkeypress')
-        def onkeydown = attrs.remove('onkeydown')
-        def onkeyup = attrs.remove('onkeyup')
+        def onclick = attrs.getProperty('onclick')
+        def ondblclick = attrs.getProperty('ondblclick')
+        def onmousedown = attrs.getProperty('onmousedown')
+        def onmoouseup = attrs.getProperty('onmoouseup')
+        def onmouseover = attrs.getProperty('onmouseover')
+        def onmousemove = attrs.getProperty('onmousemove')
+        def onmouseout = attrs.getProperty('onmouseout')
+        def onkeypress = attrs.getProperty('onkeypress')
+        def onkeydown = attrs.getProperty('onkeydown')
+        def onkeyup = attrs.getProperty('onkeyup')
 
         //           File indir = new File(pageScope.location)
         //           indir.mkdir()
@@ -52,35 +51,34 @@ class ImageIndirectTagLib {
 
         // <img class="Photo" src="${createLink(controller:'photo', action:'viewImage', id:'profileInstance.photos.get(1).id')}" />
 
-        def parameters = "src=\"" + request.getContextPath() + "/imageIndirect?imageName=${imagename}"
-        parameters += category ? "&category=${category}" : ""
-        parameters += contenttype ? "&contenttype=${contenttype}" : ""
-        parameters += '" '
+        //  def parameters = "src=\"" + request.getContextPath() + "/imageIndirect?imageName=${imagename}"
+        def link = grailsLinkGenerator.link(controller: 'imageIndirect' , params: [imageName: imagename, category:category] )
+        def imgAttrs = ""
 
-        parameters += name ? " name=\"" + name + "\"" : ""
-        parameters += alt ? " alt=\"" + alt + "\"" : ""
-        parameters += id ? " id=\"" + id + "\"" : ""
-        parameters += title ? " title=\"" + title + "\"" : ""
-        parameters += lang ? " lang=\"" + lang + "\"" : ""
-        parameters += style ? " style=\"" + style + "\"" : ""
-        parameters += width ? " width=\"" + width + "\"" : ""
-        parameters += height ? " height=\"" + height + "\"" : ""
-        parameters += ismap ? " ismap=\"" + ismap + "\"" : ""
-        parameters += longdesc ? " longdesc=\"" + longdesc + "\"" : ""
-        parameters += usemap ? " usemap=\"" + usemap + "\"" : ""
+        imgAttrs += name ? " name=\"" + name + "\"" : ""
+        imgAttrs += alt ? " alt=\"" + alt + "\"" : ""
+        imgAttrs += id ? " id=\"" + id + "\"" : ""
+        imgAttrs += title ? " title=\"" + title + "\"" : ""
+        imgAttrs += lang ? " lang=\"" + lang + "\"" : ""
+        imgAttrs += style ? " style=\"" + style + "\"" : ""
+        imgAttrs += width ? " width=\"" + width + "\"" : ""
+        imgAttrs += height ? " height=\"" + height + "\"" : ""
+        imgAttrs += ismap ? " ismap=\"" + ismap + "\"" : ""
+        imgAttrs += longdesc ? " longdesc=\"" + longdesc + "\"" : ""
+        imgAttrs += usemap ? " usemap=\"" + usemap + "\"" : ""
 
-        parameters += onclick ? " onclick=\"" + onclick + "\"" : ""
-        parameters += ondblclick ? " ondblclick=\"" + ondblclick + "\"" : ""
-        parameters += onmousedown ? " onmousedown=\"" + onmousedown + "\"" : ""
-        parameters += onmoouseup ? " onmoouseup=\"" + onmoouseup + "\"" : ""
-        parameters += onmouseover ? " onmouseover=\"" + onmouseover + "\"" : ""
-        parameters += onmousemove ? " onmousemove=\"" + onmousemove + "\"" : ""
-        parameters += onmouseout ? " onmouseout=\"" + onmouseout + "\"" : ""
-        parameters += onkeypress ? " onkeypress=\"" + onkeypress + "\"" : ""
-        parameters += onkeydown ? " onkeydown=\"" + onkeydown + "\"" : ""
-        parameters += onkeyup ? " onkeyup=\"" + onkeyup + "\"" : ""
+        imgAttrs += onclick ? " onclick=\"" + onclick + "\"" : ""
+        imgAttrs += ondblclick ? " ondblclick=\"" + ondblclick + "\"" : ""
+        imgAttrs += onmousedown ? " onmousedown=\"" + onmousedown + "\"" : ""
+        imgAttrs += onmoouseup ? " onmoouseup=\"" + onmoouseup + "\"" : ""
+        imgAttrs += onmouseover ? " onmouseover=\"" + onmouseover + "\"" : ""
+        imgAttrs += onmousemove ? " onmousemove=\"" + onmousemove + "\"" : ""
+        imgAttrs += onmouseout ? " onmouseout=\"" + onmouseout + "\"" : ""
+        imgAttrs += onkeypress ? " onkeypress=\"" + onkeypress + "\"" : ""
+        imgAttrs += onkeydown ? " onkeydown=\"" + onkeydown + "\"" : ""
+        imgAttrs += onkeyup ? " onkeyup=\"" + onkeyup + "\"" : ""
 
-        out << "<img " + parameters + " />"
+        out << "<img src='${link}' '${imgAttrs}' />"
     }
 
 
