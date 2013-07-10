@@ -15,10 +15,10 @@ Wanna help?. Contact me via github or twitter @jmiguel
 
 More (short) info:
 
-This grails plugin adds a new tag  <ii:imageTag /> which will allow your application serve images on your filesystem which are outside your application context. I know. You could do it with some Apache (or other webServer)
+This grails plugin adds a new tag  &lt;ii:imageTag /&gt; which will allow your application serve images on your filesystem which are outside your application context. I know. You could do it with some Apache (or other webServer)
  tricks, but sometimes this approach can be very convenient. 
 
-** Use by example **
+<h2>Use by example</h2>
 
 Simplest use:
 
@@ -27,7 +27,7 @@ Simplest use:
 imageindirect.basePath='/tmp/images'
 
 2 - Deploy a photo (say, myPhoto.jpg) on that folder
-3 - Write anywhere on you GSP: <ii:imageTag indirect-imagename="myPhoto.jpg"/> 
+3 - Write anywhere on you GSP: &lt;ii:imageTag indirect-imagename="myPhoto.jpg"/&gt; 
 4 - You got it!
 
 
@@ -46,9 +46,9 @@ imageindirect.category.macro='macroPhotos/'
     Put on /tmp/images/macroPhotos , for example, "antFace.jpg" 
 
 3 - And on you GSP: 
-	<ii:imageTag indirect-imagename="myAvatar.gif"/><br>
-	<ii:imageTag indirect-category="landscapes" indirect-imagename="majorca.png"/><br>
-	<ii:imageTag indirect-category="macroPhotos" indirect-imagename="antFace.jpg"/><br>
+	&lt;ii:imageTag indirect-imagename="myAvatar.gif"/&gt;
+	&lt;ii:imageTag indirect-category="landscapes" indirect-imagename="majorca.png"/&gt;
+	&lt;ii:imageTag indirect-category="macroPhotos" indirect-imagename="antFace.jpg"/&gt;
 
 4 - That's it!. 
  
