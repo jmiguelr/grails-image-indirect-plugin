@@ -1,6 +1,6 @@
 class ImgIndirectGrailsPlugin {
     // the plugin version
-    def version = "0.1"
+    def version = "0.0.1"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "2.2 > *"
     // resources that are excluded from plugin packaging
@@ -27,10 +27,10 @@ folders not mapped for web applications)
     def license = "APACHE"
 
     // Details of company behind the plugin (if there is one)
-    // def organization = [ name: "My Company", url: "http://www.my-company.com/" ]
+    def organization = [ name: "Virtual Software", url: "http://www.virtualsw.com/" ]
 
     // Any additional developers beyond the author specified above.
-//    def developers = [ [ name: "Joe Bloggs", email: "joe@bloggs.net" ]]
+    // def developers = [ [ name: "jmiguel rodriguez", email: "jmiguel@virtualsw.com" ]]
 
     // Location of the plugin's issue tracker.
 //    def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPMYPLUGIN" ]

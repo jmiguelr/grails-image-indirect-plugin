@@ -34,4 +34,13 @@ grails.project.dependency.resolution = {
             export = false
         }
     }
+
+
+    grails.project.repos.nexusvirtualsw.url = "http://nexus.irtualsw.es/nexus/content/repositories/grails_virtualsw/"
+    grails.project.repos.default="nexusvirtualsw"
+    grails.project.repos.nexusvirtualsw.type = "maven"
+    grails.project.repos.nexusvirtualsw.username = "admin"
+    grails.project.repos.nexusvirtualsw.password = "qwe123546"
+
+    // grails.project.repos.nexusvirtualsw.portal = "grailsCentral"
 }

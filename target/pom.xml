@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns='http://maven.apache.org/POM/4.0.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd'>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.grails.plugins</groupId>
+  <artifactId>img-indirect</artifactId>
+  <packaging>zip</packaging>
+  <version>0.0.1</version>
+  <name>Image Indirect Plugin</name>
+  <description>This plugin allows access to images outside the web server environment (tipically,
+folders not mapped for web applications)
+</description>
+  <url>not-yet</url>
+  <licenses>
+    <license>
+      <name>Apache License 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+  <organization>
+    <name>Virtual Software</name>
+    <url>http://www.virtualsw.com/</url>
+  </organization>
+  <developers>
+    <developer>
+      <name>jmiguel rodriguez</name>
+      <email>jmiguel@virtualsw.com</email>
+    </developer>
+  </developers>
+  <dependencies />
+</project>

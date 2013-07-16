@@ -8,12 +8,10 @@ class ImageIndirectController {
     def index(String imageName, String category) {
         File fileToSend = new File( imageIndirectService.fullPath( category ) , imageName )
 
-        println("ImageIndirect - params: ${params} We'll try to get image [${fileToSend.absolutePath}]" )
-
         if( fileToSend.exists() ) {
             InputStream is = new BufferedInputStream(new FileInputStream( fileToSend ));
             String mimeType = URLConnection.guessContentTypeFromStream(is);
-            println("ImageIndirect - mime type for [${fileToSend.name}]: ${mimeType}")
+
             response.setContentType(mimeType)
             OutputStream out = response.getOutputStream();
 

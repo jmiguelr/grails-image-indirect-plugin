@@ -1,0 +1,23 @@
+<plugin name='img-indirect' version='0.0.1' grailsVersion='2.2 &gt; *'>
+  <author>jmiguel rodriguez</author>
+  <authorEmail>jmiguel@virtualsw.com</authorEmail>
+  <title>Image Indirect Plugin</title>
+  <description>This plugin allows access to images outside the web server environment (tipically,
+folders not mapped for web applications)
+</description>
+  <documentation>not-yet</documentation>
+  <type>ImgIndirectGrailsPlugin</type>
+  <resources>
+    <resource>com.virtualsw.ImageIndirectController</resource>
+    <resource>com.virtualsw.Prueba1Controller</resource>
+    <resource>com.virtualsw.ImageIndirectService</resource>
+    <resource>com.virtualsw.ImageIndirectTagLib</resource>
+  </resources>
+  <repositories>
+    <repository name='grailsCentral' url='http://grails.org/plugins' />
+  </repositories>
+  <dependencies />
+  <plugins />
+  <runtimePluginRequirements />
+  <behavior />
+</plugin>
