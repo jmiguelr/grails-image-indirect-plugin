@@ -9,13 +9,13 @@ grails.project.dependency.resolution = {
         // excludes 'ehcache'
     }
     log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
-    legacyResolve false // whether to do a secondary resolve on plugin installation, not advised and here for backwards compatibility
+    legacyResolve true // whether to do a secondary resolve on plugin installation, not advised and here for backwards compatibility
     repositories {
         grailsCentral()
         // uncomment the below to enable remote dependency resolution
         // from public Maven repositories
         //mavenLocal()
-        //mavenCentral()
+        mavenCentral()
         //mavenRepo "http://snapshots.repository.codehaus.org"
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
@@ -35,12 +35,13 @@ grails.project.dependency.resolution = {
         }
     }
 
+//    grails.project.repos.default="nexusvirtualsw"
+//    grails.project.repos.nexusvirtualsw.url = "http://nexus.virtualsw.es/nexus/content/repositories/grails_virtualsw/"
+//    grails.project.repos.nexusvirtualsw.type = "maven"
+//    grails.project.repos.nexusvirtualsw.username = "admin"
+//    grails.project.repos.nexusvirtualsw.password = "qwe123546"
 
-    grails.project.repos.nexusvirtualsw.url = "http://nexus.irtualsw.es/nexus/content/repositories/grails_virtualsw/"
-    grails.project.repos.default="nexusvirtualsw"
-    grails.project.repos.nexusvirtualsw.type = "maven"
-    grails.project.repos.nexusvirtualsw.username = "admin"
-    grails.project.repos.nexusvirtualsw.password = "qwe123546"
+
 
     // grails.project.repos.nexusvirtualsw.portal = "grailsCentral"
 }

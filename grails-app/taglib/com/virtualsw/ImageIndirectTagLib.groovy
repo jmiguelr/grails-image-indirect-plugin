@@ -78,7 +78,7 @@ class ImageIndirectTagLib {
         imgAttrs += onkeydown ? " onkeydown=\"" + onkeydown + "\"" : ""
         imgAttrs += onkeyup ? " onkeyup=\"" + onkeyup + "\"" : ""
 
-        out << "<img src='${link}' '${imgAttrs}' />"
+        out << "<img src='${link}' ${imgAttrs} />"
     }
 
 

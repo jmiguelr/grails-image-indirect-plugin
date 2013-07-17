@@ -2,13 +2,16 @@ package com.virtualsw
 
 class ImageIndirectController {
 
-    static final int READ_BUFFER_SIZE = 1024
+    static final int READ_BUFFER_SIZE = 10240
     def imageIndirectService
 
     def index(String imageName, String category) {
+        boolean imageExists = false ;
         File fileToSend = new File( imageIndirectService.fullPath( category ) , imageName )
 
-        if( fileToSend.exists() ) {
+        fileToSend = fileToSend.exists() ? fileToSend : new File( imageIndirectService.fullPath( category ) , imageIndirectService.lastResortImage() )
+
+        if( fileToSend.exists() && fileToSend.isFile() ) {
             InputStream is = new BufferedInputStream(new FileInputStream( fileToSend ));
             String mimeType = URLConnection.guessContentTypeFromStream(is);
 

@@ -1,4 +1,4 @@
-<plugin name='img-indirect' version='0.0.1' grailsVersion='2.2 &gt; *'>
+<plugin name='img-indirect' version='0.0.6' grailsVersion='2.2 &gt; *'>
   <author>jmiguel rodriguez</author>
   <authorEmail>jmiguel@virtualsw.com</authorEmail>
   <title>Image Indirect Plugin</title>
@@ -15,6 +15,7 @@ folders not mapped for web applications)
   </resources>
   <repositories>
     <repository name='grailsCentral' url='http://grails.org/plugins' />
+    <repository name='mavenCentral' url='http://repo1.maven.org/maven2/' />
   </repositories>
   <dependencies />
   <plugins />

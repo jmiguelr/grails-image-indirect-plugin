@@ -1,6 +1,5 @@
 package com.virtualsw
 
-import org.codehaus.groovy.grails.web.context.ServletContextHolder
 import org.springframework.web.multipart.MultipartFile
 
 class ImageIndirectService {
@@ -22,12 +21,18 @@ class ImageIndirectService {
         return returnPath
     }
 
-    File storeImage(MultipartFile multipartFile, String desiredName , String category = null)  {
-        def storagePath = fullPath(category)
-        def physicalFileName =  desiredName?: multipartFile.originalFilename
-        File file = new File(storagePath , physicalFileName )
-        multipartFile.transferTo( file )
-        return file
+    File storeImage(MultipartFile multipartFile, String desiredName = null, String category = null) {
+        if (multipartFile) {
+            def storagePath = fullPath(category)
+            def physicalFileName = desiredName ?: multipartFile.originalFilename
+            File file = new File(storagePath, physicalFileName)
+            multipartFile.transferTo(file)
+            return file
+        }
+    }
+
+    String lastResortImage() {
+        grailsApplication.config.imageindirect.nophoto
     }
 
 }
