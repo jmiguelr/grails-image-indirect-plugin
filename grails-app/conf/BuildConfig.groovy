@@ -29,7 +29,7 @@ grails.project.dependency.resolution = {
 
     plugins {
         build(":tomcat:$grailsVersion",
-              ":release:2.2.0",
+              ":release:2.2.1",
               ":rest-client-builder:1.0.3") {
             export = false
         }
@@ -45,3 +45,5 @@ grails.project.dependency.resolution = {
 
     // grails.project.repos.nexusvirtualsw.portal = "grailsCentral"
 }
+
+grails.project.repos.default = "nexusvirtualswgrails"
