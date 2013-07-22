@@ -57,3 +57,9 @@ You can define categories of photos and make them accessible both on relative or
 <li>That's it!. 
 </ul>
  
+ 
+From v 0.0.5 you can also define a 'last resort' default file just in case the requested one doesn't exist. THis can be
+very useful when you need things like a default icon, default user avatar image...
+
+
+ 
