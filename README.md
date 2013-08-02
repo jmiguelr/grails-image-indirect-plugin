@@ -49,8 +49,10 @@ You can define categories of photos and make them accessible both on relative or
 
 <li>That's it!. 
 </ul>
- 
- 
-From v 0.0.5 you can also define a 'last resort' default file just in case the requested one doesn't exist. THis can be
-very useful when you need things like a default icon, default user avatar image or something like that
 
+From v 0.0.4 you can use the plugin to store the images uploaded on the correct disk location. Just call the storeImage method on ImageIndirectService:
+
+File storeImage(MultipartFile multipartFile, String desiredName = null, String category = null)  
+ 
+From v 0.0.5 you can also define a 'last resort' default file just in case the requested one doesn't exist. This can be
+very useful when you need things like a default icon, default user avatar image or something like that
