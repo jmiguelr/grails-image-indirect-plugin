@@ -3,37 +3,38 @@ package com.virtualsw
 class ImageIndirectTagLib {
 
     static namespace = "ii"
+
     def imageIndirectService
 
-    def imageTag = { attrs, body ->
-        def imagename = attrs.getProperty('indirect-imagename')
-        def category = attrs.getProperty('indirect-category')
+    def imageTag = { attrs ->
+        def imagename = attrs.'indirect-imagename'
+        def category = attrs.'indirect-category'
 
-        def name = attrs.getProperty('name')
+        def name = attrs.name
 
         /* Standard img tag attributes */
-        def id = attrs.getProperty('id')
-        def alt = attrs.getProperty('alt')
-        def title = attrs.getProperty('title')
-        def lang = attrs.getProperty('lang')
-        def style = attrs.getProperty('style')
-        def width = attrs.getProperty('width')
-        def height = attrs.getProperty('height')
-        def ismap = attrs.getProperty('ismap')
-        def longdesc = attrs.getProperty('longdesc')
-        def usemap = attrs.getProperty('usemap')
+        def id = attrs.id
+        def alt = attrs.alt
+        def title = attrs.title
+        def lang = attrs.lang
+        def style = attrs.style
+        def width = attrs.width
+        def height = attrs.height
+        def ismap = attrs.ismap
+        def longdesc = attrs.longdesc
+        def usemap = attrs.usemap
 
         /* Standard img tag event attributes */
-        def onclick = attrs.getProperty('onclick')
-        def ondblclick = attrs.getProperty('ondblclick')
-        def onmousedown = attrs.getProperty('onmousedown')
-        def onmoouseup = attrs.getProperty('onmoouseup')
-        def onmouseover = attrs.getProperty('onmouseover')
-        def onmousemove = attrs.getProperty('onmousemove')
-        def onmouseout = attrs.getProperty('onmouseout')
-        def onkeypress = attrs.getProperty('onkeypress')
-        def onkeydown = attrs.getProperty('onkeydown')
-        def onkeyup = attrs.getProperty('onkeyup')
+        def onclick = attrs.onclick
+        def ondblclick = attrs.ondblclick
+        def onmousedown = attrs.onmousedown
+        def onmoouseup = attrs.onmoouseup
+        def onmouseover = attrs.onmouseover
+        def onmousemove = attrs.onmousemove
+        def onmouseout = attrs.onmouseout
+        def onkeypress = attrs.onkeypress
+        def onkeydown = attrs.onkeydown
+        def onkeyup = attrs.onkeyup
 
         //           File indir = new File(pageScope.location)
         //           indir.mkdir()
@@ -41,7 +42,7 @@ class ImageIndirectTagLib {
         //           file.toURL()
         //
         //           if (!file.exists()) {
-        //               file.createNewFile();
+        //               file.createNewFile()
         //               use (FileBinaryCategory)
         //               {
         //                   file << src.toURL()
@@ -55,9 +56,9 @@ class ImageIndirectTagLib {
 
 
         //
-        // def link = grailsLinkGenerator.link(controller: 'imageIndirect' , params: [imageName: imagename, category:category] )
-        def link =  imageIndirectService.imageLink( imagename , category )
-        def imgAttrs = ""
+        // String link = grailsLinkGenerator.link(controller: 'imageIndirect' , params: [imageName: imagename, category:category] )
+        String link =  imageIndirectService.imageLink( imagename , category )
+        String imgAttrs = ""
 
         imgAttrs += name ? " name=\"" + name + "\"" : ""
         imgAttrs += alt ? " alt=\"" + alt + "\"" : ""
@@ -84,7 +85,4 @@ class ImageIndirectTagLib {
 
         out << "<img src='${link}' ${imgAttrs} />"
     }
-
-
-
 }
