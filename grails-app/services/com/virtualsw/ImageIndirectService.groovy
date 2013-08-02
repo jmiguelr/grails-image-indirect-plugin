@@ -4,6 +4,8 @@ import org.springframework.web.multipart.MultipartFile
 
 class ImageIndirectService {
 
+    static transactional = false
+
     def grailsApplication
     def grailsLinkGenerator
 
@@ -23,13 +25,15 @@ class ImageIndirectService {
     }
 
     File storeImage(MultipartFile multipartFile, String desiredName = null, String category = null) {
-        if (multipartFile) {
-            def storagePath = fullPath(category)
-            def physicalFileName = desiredName ?: multipartFile.originalFilename
-            File file = new File(storagePath, physicalFileName)
-            multipartFile.transferTo(file)
-            return file
+        if (!multipartFile) {
+            return null
         }
+
+        def storagePath = fullPath(category)
+        def physicalFileName = desiredName ?: multipartFile.originalFilename
+        File file = new File(storagePath, physicalFileName)
+        multipartFile.transferTo(file)
+        return file
     }
 
     String imageLink( String imageName, String category) {
@@ -39,5 +43,4 @@ class ImageIndirectService {
     String lastResortImage() {
         grailsApplication.config.imageindirect.nophoto
     }
-
 }
