@@ -5,6 +5,7 @@ import org.springframework.web.multipart.MultipartFile
 class ImageIndirectService {
 
     def grailsApplication
+    def grailsLinkGenerator
 
     String fullPath(String category = null) {
 
@@ -29,6 +30,10 @@ class ImageIndirectService {
             multipartFile.transferTo(file)
             return file
         }
+    }
+
+    String imageLink( String imageName, String category) {
+        grailsLinkGenerator.link(controller: 'imageIndirect' , params: [imageName: imageName, category:category] )
     }
 
     String lastResortImage() {

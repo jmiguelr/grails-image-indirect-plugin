@@ -3,21 +3,14 @@ grails-image-indirect-plugin
 
 <h3>Summary</h3>
 
-A Grails plugin to access images anywhere and make it looks as local
+A Grails plugin to serve images on your program located anywhere on your filesystem, not only on the application context path
 
-
-<h3>Status</h3>
-
-In early development stage. 
-
-Wanna help?. Contact me via github or twitter <a href="http://twitter.com/jmiguel">@jmiguel</a>
 
 <hr>
 
 <h3>More (short) info:</h3>
 
-This grails plugin adds a new tag  &lt;ii:imageTag /&gt; which will allow your application serve images on your filesystem which are outside your application context. I know. You could do it with some Apache (or other webServer)
- tricks, but sometimes this approach can be very convenient. 
+This grails plugin adds a new tag  &lt;ii:imageTag /&gt; which allows your application to serve images located anywhere on your filesystem  (outside your application context). I know. You could do it with some Apache (or other webServer) tricks, but sometimes this approach can be very convenient. 
 
 <h2>Use by example</h2>
 
@@ -29,7 +22,7 @@ This grails plugin adds a new tag  &lt;ii:imageTag /&gt; which will allow your a
 <p>imageindirect.basePath='/tmp/images'</p>
 
 	<li>Deploy a photo (say, myPhoto.jpg) on that folder
-	<li>Write anywhere on you GSP: &lt;ii:imageTag indirect-imagename="myPhoto.jpg"/&gt; 
+	<li>Write anywhere on your GSP: &lt;ii:imageTag indirect-imagename="myPhoto.jpg"/&gt; 
 	<li>You got it!
 </ul>
 
@@ -59,7 +52,5 @@ You can define categories of photos and make them accessible both on relative or
  
  
 From v 0.0.5 you can also define a 'last resort' default file just in case the requested one doesn't exist. THis can be
-very useful when you need things like a default icon, default user avatar image...
+very useful when you need things like a default icon, default user avatar image or something like that
 
-
- 

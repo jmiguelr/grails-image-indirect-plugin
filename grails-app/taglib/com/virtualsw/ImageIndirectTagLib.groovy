@@ -3,7 +3,7 @@ package com.virtualsw
 class ImageIndirectTagLib {
 
     static namespace = "ii"
-    def grailsLinkGenerator
+    def imageIndirectService
 
     def imageTag = { attrs, body ->
         def imagename = attrs.getProperty('indirect-imagename')
@@ -52,7 +52,11 @@ class ImageIndirectTagLib {
         // <img class="Photo" src="${createLink(controller:'photo', action:'viewImage', id:'profileInstance.photos.get(1).id')}" />
 
         //  def parameters = "src=\"" + request.getContextPath() + "/imageIndirect?imageName=${imagename}"
-        def link = grailsLinkGenerator.link(controller: 'imageIndirect' , params: [imageName: imagename, category:category] )
+
+
+        //
+        // def link = grailsLinkGenerator.link(controller: 'imageIndirect' , params: [imageName: imagename, category:category] )
+        def link =  imageIndirectService.imageLink( imagename , category )
         def imgAttrs = ""
 
         imgAttrs += name ? " name=\"" + name + "\"" : ""

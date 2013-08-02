@@ -1,4 +1,4 @@
-<plugin name='img-indirect' version='0.0.7' grailsVersion='2.2 &gt; *'>
+<plugin name='img-indirect' version='0.0.8' grailsVersion='2.2 &gt; *'>
   <author>jmiguel rodriguez</author>
   <authorEmail>jmiguel@virtualsw.com</authorEmail>
   <title>Image Indirect Plugin</title>
