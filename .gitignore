@@ -14,4 +14,5 @@ test/unit/com/virtualsw/Prueba1ControllerTests.groovy
 *~
 web-app
 *.zip
+*.sha1
 plugin.xml
