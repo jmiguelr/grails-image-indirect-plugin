@@ -10,7 +10,9 @@ class ImageIndirectController {
         boolean imageExists = false
         File fileToSend = new File( imageIndirectService.fullPath( category ) , imageName )
 
-        fileToSend = fileToSend.exists() ? fileToSend : new File( imageIndirectService.fullPath( category ) , imageIndirectService.lastResortImage() )
+        fileToSend = fileToSend.exists() && fileToSend.isFile() ?
+            fileToSend :
+            new File( imageIndirectService.fullPath( category ) , imageIndirectService.lastResortImage() )
 
         if(!fileToSend.exists() || !fileToSend.isFile() ) {
             response.status = 404
